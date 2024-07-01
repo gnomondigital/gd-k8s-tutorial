@@ -52,6 +52,7 @@ kubectl apply -f Role.yaml
 kubectl apply -f RoleBindings.yaml
 kubectl apply -f ClusterRole.yaml
 kubectl apply -f ClusterRoleBinding.yaml
+```
 
 ## Testing
 
@@ -64,18 +65,19 @@ Testing the RBAC configurations is essential to ensure that the defined roles an
 #### Verify if the user nom@entreprise.com can list pods:
 ```sh
 kubectl auth can-i list pods --as=nom@entreprise.com
-
+```
 
 #### Check if the user ju****@**************.com can create secrets:
 ```sh
 kubectl auth can-i create secrets --as=ju****@**************.com
-
+```
 
 #### Confirm if the user admin can delete deployments:
 ```sh
 kubectl auth can-i delete deployments --as=admin
-
+```
 
 #### Ensure the user g*****@**************.com has cluster-admin privileges:
 ```sh
 kubectl auth can-i '*' '*' --as=g*****@**************.com
+```
